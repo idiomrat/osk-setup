@@ -14,15 +14,21 @@ echo "Ensuring target directories exist..."
 mkdir -p "$HOME/.local/share/applications"
 mkdir -p "$HOME/.config/fish"
 
-echo "Downloading the desktop entry file..."
+echo "Downloading the Onboard desktop entry file..."
 RAW_DESKTOP_URL="https://raw.githubusercontent.com/idiomrat/osk-setup/main/a-onboard.desktop"
 DESKTOP_DEST="$HOME/.local/share/applications/a-onboard.desktop"
 curl -sSL "$RAW_DESKTOP_URL" -o "$DESKTOP_DEST"
 chmod +x "$DESKTOP_DEST"
+
+echo "Downloading the Update desktop entry file..."
+UPDATE_DESKTOP_URL="https://raw.githubusercontent.com/idiomrat/osk-setup/refs/heads/main/update.desktop"
+UPDATE_DESKTOP_DEST="$HOME/.local/share/applications/update.desktop"
+curl -sSL "$UPDATE_DESKTOP_URL" -o "$UPDATE_DESKTOP_DEST"
+chmod +x "$UPDATE_DESKTOP_DEST"
 
 echo "Downloading the Fish shell configuration..."
 FISH_URL="https://raw.githubusercontent.com/idiomrat/osk-setup/refs/heads/main/config.fish"
 FISH_DEST="$HOME/.config/fish/config.fish"
 curl -sSL "$FISH_URL" -o "$FISH_DEST"
 
-echo "Setup complete! Both files have been successfully downloaded and configured."
+echo "Setup complete! All files have been successfully downloaded and configured."
