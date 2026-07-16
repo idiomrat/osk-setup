@@ -4,7 +4,7 @@
 set -e
 
 echo "Creating Distrobox container 'a' with Ubuntu 24.04..."
-distrobox create -n a -i ubuntu:24.04 -y
+distrobox create -n a -i ubuntu:24.04 -Y
 
 echo "Installing 'onboard' inside container 'a'..."
 # Distrobox shares your user privileges, but apt requires root within the container
