@@ -1,0 +1,19 @@
+[Desktop Entry]
+Categories=Utility;Accessibility;
+Comment=Flexible onscreen keyboard
+Exec=env GDK_BACKEND=x11 GSETTINGS_SCHEMA_DIR=/dev/null /usr/bin/distrobox-enter -n a -- onboard
+GenericName=Onboard onscreen keyboard (on a)
+Icon=onboard
+Keywords=onscreen;keyboard;accessibility;utility;
+Name=Onboard (on a)
+NoDisplay=false
+Path=
+PrefersNonDefaultGPU=false
+StartupNotify=true
+StartupWMClass=/usr/share/applications/onboard.desktop
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=
+X-Ubuntu-Gettext-Domain=onboard
