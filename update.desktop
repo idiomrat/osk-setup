@@ -2,7 +2,7 @@
 Type=Application
 Name=System Update
 Comment=Update ujust, Homebrew, and packages
-Exec=konsole --noclose -e bash -c "ujust update && brew update && brew upgrade"
+Exec=konsole --noclose -e bash -c "ujust update && brew update; brew upgrade; distrobox stop a"
 Icon=system-software-update
 Terminal=false
 Categories=System;Utility;
