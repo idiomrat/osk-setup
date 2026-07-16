@@ -10,17 +10,19 @@ echo "Installing 'onboard' inside container 'a'..."
 # Distrobox shares your user privileges, but apt requires root within the container
 distrobox enter a -- sudo apt update && distrobox enter a -- sudo apt install -y onboard
 
-echo "Ensuring the local applications directory exists..."
+echo "Ensuring target directories exist..."
 mkdir -p "$HOME/.local/share/applications"
+mkdir -p "$HOME/.config/fish"
 
 echo "Downloading the desktop entry file..."
-# Using the raw GitHub URL to get the actual file content
-RAW_URL="https://raw.githubusercontent.com/idiomrat/osk-setup/main/a-onboard.desktop"
-DEST_FILE="$HOME/.local/share/applications/a-onboard.desktop"
+RAW_DESKTOP_URL="https://raw.githubusercontent.com/idiomrat/osk-setup/main/a-onboard.desktop"
+DESKTOP_DEST="$HOME/.local/share/applications/a-onboard.desktop"
+curl -sSL "$RAW_DESKTOP_URL" -o "$DESKTOP_DEST"
+chmod +x "$DESKTOP_DEST"
 
-curl -sSL "$RAW_URL" -o "$DEST_FILE"
+echo "Downloading the Fish shell configuration..."
+FISH_URL="https://raw.githubusercontent.com/idiomrat/osk-setup/refs/heads/main/config.fish"
+FISH_DEST="$HOME/.config/fish/config.fish"
+curl -sSL "$FISH_URL" -o "$FISH_DEST"
 
-echo "Making the desktop file executable..."
-chmod +x "$DEST_FILE"
-
-echo "Setup complete! You should now see the 'a-onboard' application in your launcher."
+echo "Setup complete! Both files have been successfully downloaded and configured."
