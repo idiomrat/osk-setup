@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=System Update
+Comment=Update ujust, Homebrew, and packages
+Exec=konsole --noclose -e bash -c "ujust update && brew update && brew upgrade"
+Icon=system-software-update
+Terminal=false
+Categories=System;Utility;
